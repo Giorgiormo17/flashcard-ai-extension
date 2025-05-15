@@ -75,7 +75,7 @@ function App() {
         setSuggestionError('');
         setBackText('');
         setSaveStatus('');
-        const backendUrl = 'http://localhost:3001/api/suggest';
+        const backendUrl = 'http://13.60.32.1:3001/api/suggest';
         try {
             const response = await fetch(backendUrl, { method: 'POST', headers: { 'Content-Type': 'application/json', }, body: JSON.stringify({ text: textToSuggest }), });
             if (!response.ok) { let errorMsg = `HTTP error! status: ${response.status}`; try { const errorData = await response.json(); errorMsg = errorData.error || errorMsg; } catch (e) { /* Ignore */ } throw new Error(errorMsg); }
